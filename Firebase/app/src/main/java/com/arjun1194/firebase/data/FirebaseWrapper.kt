@@ -38,6 +38,10 @@ class FirebaseWrapper {
         })
     }
 
+
+    fun getAllUsers(){
+
+    }
     interface TaskListener{
         fun onSuccess(key:String)
         fun onFailed(e:Exception)
