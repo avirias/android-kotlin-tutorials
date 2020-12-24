@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav"
+    app:startDestination="@id/loadingFragment">
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.arjun1194.firebase.ui.user.UserFragment"
+        android:label="user_fragment"
+        tools:layout="@layout/user_fragment" />
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.arjun1194.firebase.LoadingFragment"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" >
+        <action
+            android:id="@+id/action_loadingFragment_to_userFragment"
+            app:destination="@id/userFragment"
+            app:popUpTo="@id/userFragment" />
+    </fragment>
+</navigation>
