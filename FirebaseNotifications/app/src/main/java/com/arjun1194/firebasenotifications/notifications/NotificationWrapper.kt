@@ -17,7 +17,7 @@ import com.arjun1194.firebasenotifications.R
 
 class NotificationWrapper(private val context: Context) {
 
-    companion object{
+    companion object {
         const val acceptRequestCode = 10911
         const val declineRequestCode = 10899
 //        var mediaPlayer: MediaPlayer  = MediaPlayer().apply {
@@ -34,7 +34,7 @@ class NotificationWrapper(private val context: Context) {
     private val notificationManager = context.getSystemService(NotificationManager::class.java)
 
 
-    fun sendCallNotification(from: String){
+    fun sendCallNotification(from: String) {
         val intent = Intent(context, MainActivity::class.java)
         val acceptIntent = PendingIntent.getActivity(context, acceptRequestCode, intent, 0)
         val defaultRingtoneUri: Uri = RingtoneManager.getActualDefaultRingtoneUri(
@@ -59,13 +59,11 @@ class NotificationWrapper(private val context: Context) {
 //        }
 
 
-
         notificationManager.notify(acceptRequestCode, notification)
     }
 
 
-
-    fun removeCurrentNotification(){
+    fun removeCurrentNotification() {
         notificationManager.cancel(acceptRequestCode)
     }
 }
